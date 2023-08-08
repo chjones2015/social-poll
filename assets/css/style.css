@@ -1,0 +1,63 @@
+/* General Styles */
+
+body {
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+/* Header/Nav */
+
+.top-bar {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 1em;
+    /*Sets the font color for submit box*/
+    color: white;
+    /*sets background color*/
+    background-color: var(--header-footer-color);
+}
+
+.top-bar ul {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+aside {
+    
+}
+
+/* for easy theme changes */
+:root {
+    --body-color: white;
+    --header-footer-color: #22333B;
+    --body-text: #22333B;
+    --header-text: #A9927D;
+}
+  
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+}
+
+
+
+
+
