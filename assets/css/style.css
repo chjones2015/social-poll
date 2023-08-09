@@ -13,30 +13,44 @@ body {
     margin: 0;
     padding: 1em;
     /*Sets the font color for submit box*/
-    color: white;
+    color: var(--header-text);
     /*sets background color*/
     background-color: var(--header-footer-color);
+}
+
+header {
+    display: flex;
+    width: 20%;
+}
+
+nav {
+    display: flex;
+    width: 70%;
 }
 
 .top-bar ul {
     display: flex;
     flex-flow: row wrap;
-
+    justify-content: space-around;
+    width: 95%;
 }
 
-aside {
+.top-bar li {
+    list-style-type: none;
+    background-color: var()
+}
+
+/* aside {
     
-}
+} */
 
 /* for easy theme changes */
 :root {
     --body-color: white;
     --header-footer-color: #22333B;
     --body-text: #22333B;
-    --header-text: #A9927D;
+    --header-text: white;
 }
-  
-
 
 .modal {
     display: none;
@@ -49,12 +63,20 @@ aside {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 70%;
+}
+
+button {
+    border: none;
+    padding: 0.5em;
+    background-color: var(--header-footer-color);
+    color: var(--header-text)
 }
 
 
