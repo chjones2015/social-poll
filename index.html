@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="top-bar">
+        <header>
+            <h1>Social Poll [name WIP]</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>Running Polls</li>
+                <li>Closed Polls</li>
+                <li>Profile</li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <aside>
+            <h2>Create Poll</h2>
+            <button onclick="showCreatePollModal()">Create Poll</button>
+
+            <div id="createPollModal" class="modal">
+                <div class="modal-content">
+                    <h2>Create Poll</h2>
+                    <label>Question:</label>
+                    <input type="text" id="pollQuestion" />
+                    <label>Options (comma separated):</label>
+                    <input type="text" id="pollOptions" />
+                    <button onclick="createPoll()">Submit</button>
+                    <button onclick="closeCreatePollModal()">Close</button>
+                </div>
+            </div>
+        </aside>
+
+        <section>
+            <h2>Poll Results</h2>
+            <div id="pollResults"></div>
+        </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+    
+</body>
+</html>
+
+
+
+
+<!-- 
+
+    Create Poll
+Option 1 ____________
+Option 2 ____________
+    Add Option
+    
+    Post Poll
+
+ -->
