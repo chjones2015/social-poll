@@ -16,8 +16,10 @@ body {
     color: var(--header-text);
     /*sets background color*/
     background-color: var(--header-footer-color);
+    border-radius: 1em;
 }
 
+/* self explanatory? */
 header {
     display: flex;
     width: 20%;
@@ -26,6 +28,7 @@ header {
 nav {
     display: flex;
     width: 70%;
+    /* so that the container takes up the whole space */
 }
 
 .top-bar ul {
@@ -74,12 +77,31 @@ nav {
 
 button {
     border: none;
-    padding: 0.5em;
+    padding: 1em;
     background-color: var(--header-footer-color);
-    color: var(--header-text)
+    color: var(--header-text);
+    border-radius: 1em;
 }
 
+main {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100vh;
+}
 
+aside {
+    border: 0.1em var(--header-footer-color) solid;
+    flex: 1;
+    border-radius: 1em;
+    padding: 1em 1em 3em 1em;
+    margin: 1em;
+    justify-content: left;
+}
 
-
-
+section {
+    display: flex;
+    border: 0.1em var(--header-footer-color) solid;
+    border-radius: 1em;
+    margin: 1em;
+    flex: 3;
+}

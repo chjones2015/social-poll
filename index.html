@@ -19,24 +19,28 @@
             </ul>
         </nav>
     </div>
-    <aside>
-        <h2>Create Poll</h2>
-        <button onclick="showCreatePollModal()">Create Poll</button>
-
-        <div id="createPollModal" class="modal">
-            <div class="modal-content">
-                <h2>Create Poll</h2>
-                <label>Question:</label>
-                <input type="text" id="pollQuestion" />
-                <label>Options (comma separated):</label>
-                <input type="text" id="pollOptions" />
-                <button onclick="createPoll()">Submit</button>
-                <button onclick="closeCreatePollModal()">Close</button>
-            </div>
-        </div>
-    </aside>
     <main>
-        <div class="profile-container"></div>
+        <aside>
+            <h2>Create Poll</h2>
+            <button onclick="showCreatePollModal()">Create Poll</button>
+
+            <div id="createPollModal" class="modal">
+                <div class="modal-content">
+                    <h2>Create Poll</h2>
+                    <label>Question:</label>
+                    <input type="text" id="pollQuestion" />
+                    <label>Options (comma separated):</label>
+                    <input type="text" id="pollOptions" />
+                    <button onclick="createPoll()">Submit</button>
+                    <button onclick="closeCreatePollModal()">Close</button>
+                </div>
+            </div>
+        </aside>
+
+        <section>
+            <h2>Poll Results</h2>
+            <div id="pollResults"></div>
+        </section>
     </main>
 
     <script src="./assets/js/script.js"></script>
