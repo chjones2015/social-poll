@@ -42,6 +42,9 @@ function showPollResults(pollId) {
     // Find the poll with the given ID
     const poll = polls.find(p => p.id === pollId);
 
+    // Check if the user has already voted for this poll
+    const hasVoted = localStorage.getItem(`poll_${pollId}_voted`) === 'true';
+
     // Create a table to display the poll results
     const table = document.createElement('table');
     const headerRow = table.insertRow();
@@ -75,8 +78,11 @@ function showPollResults(pollId) {
         const selectedOption = voteForm.querySelector('input[name="option"]:checked');
         if (selectedOption) {
             const option = selectedOption.value;
-            poll.results[option] = (poll.results[option] || 0) + 1;
-            localStorage.setItem("polls", JSON.stringify(polls));
+            if (!hasVoted) {
+                poll.results[option] = (poll.results[option] || 0) + 1;
+                localStorage.setItem(`poll_${pollId}_voted`, 'true');
+                localStorage.setItem("polls", JSON.stringify(polls));
+            }
             showPollResults(pollId);
         }
     });
@@ -89,6 +95,7 @@ function showPollResults(pollId) {
         optionInput.type = 'radio';
         optionInput.name = 'option';
         optionInput.value = option;
+        optionInput.disabled = hasVoted;
         optionLabel.appendChild(optionInput);
         voteForm.appendChild(optionLabel);
     });
@@ -96,7 +103,14 @@ function showPollResults(pollId) {
     // Add a submit button to the form
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
-    submitButton.textContent = 'Vote';
+    if (hasVoted) {
+        submitButton.textContent = 'Already Voted';
+        submitButton.disabled = true;
+    } else {
+        submitButton.textContent = 'Vote';
+        submitButton.disabled = false;
+    }
+    submitButton.disabled = hasVoted;
     voteForm.appendChild(submitButton);
 
     // Add the form to the pollResults div
